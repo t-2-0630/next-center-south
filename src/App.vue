@@ -2,7 +2,7 @@
   <div id="app">
     <ul v-for="tt in result" v-bind:key="tt.time+tt.line+tt.direction" class="list-group">
       <li class="list-group-item">
-        <h4>{{ tt.line }}</h4>
+        <h4 ><span :class="tt.style">{{ tt.line }}</span></h4>
         <h5>{{ tt.time |dateformat}}</h5>
         {{ tt.direction }} 方面行き<br />
       </li>
@@ -44,5 +44,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.blue{
+background:linear-gradient(transparent 60%, rgb(15, 133, 243) 60%);
+}
+.green{
+background:linear-gradient(transparent 60%, rgb(109, 245, 166) 60%);
 }
 </style>
